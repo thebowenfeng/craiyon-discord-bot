@@ -1,0 +1,4 @@
+aiohttp~=3.7.4.post0
+requests~=2.25.1
+Pillow~=9.1.1
+py-cord~=2.0.0
