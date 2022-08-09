@@ -4,11 +4,14 @@ import asyncio
 import aiohttp
 from io import BytesIO
 import base64
-import requests
 from PIL import Image
+import os
 
-with open("token.txt", "r") as file:
-    TOKEN = file.read()
+try:
+    with open("token.txt", "r") as file:
+        TOKEN = file.read()
+except:
+    TOKEN = os.environ.get("TOKEN")
 
 logging.basicConfig(level=logging.INFO)
 bot = discord.Bot()
