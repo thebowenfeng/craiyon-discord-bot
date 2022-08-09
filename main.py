@@ -26,7 +26,7 @@ async def on_ready():
 async def draw(ctx, prompt: discord.Option(str)):
     print(f"LOG: {ctx.author} requested a draw with prompt {prompt}")
 
-    response = await ctx.send(f"<@{ctx.author.id}> Drawing image with prompt: {prompt}. This could take up to 1 minute...")
+    response = await ctx.respond(f"<@{ctx.author.id}> Drawing image with prompt: {prompt}. This could take up to 1 minute...")
     async with aiohttp.ClientSession() as sess:
         async with sess.post("https://backend.craiyon.com/generate",
                          headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"},
