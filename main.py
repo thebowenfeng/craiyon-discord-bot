@@ -51,7 +51,7 @@ async def draw(ctx, prompt: discord.Option(str)):
     img_bytes.seek(0)
     image = discord.File(img_bytes)
     image.filename = "result.png"
-    await response.edit(content=f"<@{ctx.author.id}> Your \"{prompt}\" images has been generated", file=image)
+    await response.edit_original_message(content=f"<@{ctx.author.id}> Your \"{prompt}\" images has been generated", file=image)
 
 
 bot.run(TOKEN)
